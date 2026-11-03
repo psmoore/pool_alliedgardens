@@ -40,8 +40,8 @@ h3{font-size:18px;font-weight:700;margin:16px 0 4px}
 .top2 h2{margin:0 0 8px;font-size:19px}
 .now{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;background:#fafbfc}
 .hours{border:1px solid #f0dc9a;border-radius:4px;padding:14px 16px;background:var(--cream)}
-.hours dl{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:3px 14px;margin:0 0 8px}
-.hours dt{font-weight:600;overflow-wrap:anywhere} .hours dd{margin:0;white-space:nowrap;font-variant-numeric:tabular-nums}
+.hours dl{display:grid;grid-template-columns:1fr;gap:3px 14px;margin:0 0 8px}
+.hours dt{font-weight:600} .hours dd{margin:0 0 4px;font-variant-numeric:tabular-nums}
 .adjusted ul{margin:4px 0 0;padding-left:18px;font-size:14.5px}
 .closed{color:var(--rust-d);font-size:15px;margin:6px 0}
 table.fees{border-collapse:collapse;width:100%;max-width:620px;font-size:15px;margin:8px 0}
