@@ -396,6 +396,7 @@
         // data-ahead: how many days ahead to list closures (default 90), for a long maintenance closure announced early.
         const list = closureList(evs, +(el.dataset.ahead || 90));
         el.hidden = !list.length;
+        if (!list.length) return;
         // A list that already starts with the label's word ("Closed for the season…") needs no label.
         const label = T(el.dataset.label || "Closed");
         el.innerHTML = list[0].toLowerCase().startsWith(label.toLowerCase()) ? `${esc(list.join("; "))}.` : `<b>${esc(label)}:</b> ${esc(list.join("; "))}.`;
