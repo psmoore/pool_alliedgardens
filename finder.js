@@ -289,7 +289,8 @@
     }
     let s = groups.map((g) => `${g.label} ${g.h}`).join("; ");
     if (w.first > addDays(TODAY, 6)) s = `${T("Starts")} ${monthDay(w.first)}: ${s}`;
-    if (w.last < addDays(w.end, -6)) s += `, ${T("through")} ${monthDay(w.last)}`;
+    // "through" only when the program really ends: a holiday at the end of the window isn't its last day.
+    if (w.last < addDays(w.end, -6) && !evs.some((o) => !o.allDay && o.date > w.end && pick(o))) s += `, ${T("through")} ${monthDay(w.last)}`;
     return s;
   }
   const dateRange = (a, b) => new Intl.DateTimeFormat(LOCALE, { month: "short", day: "numeric", timeZone: "UTC" })
