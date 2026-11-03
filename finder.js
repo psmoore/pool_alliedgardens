@@ -277,7 +277,7 @@
     return groups.map(({ h, days }) => {
       const runs = [];
       for (const d of days) { const r = runs[runs.length - 1]; r && d === r[r.length - 1] + 1 ? r.push(d) : runs.push([d]); }
-      return { h, label: runs.map((r) => (r.length >= 3 ? `${dayName(r[0], style)}–${dayName(r[r.length - 1], style)}` : r.map((d) => dayName(d, style)).join("/"))).join("/") };
+      return { h, label: runs.map((r) => (r.length >= 3 ? `${dayName(r[0], style)}–${dayName(r[r.length - 1], style)}` : r.map((d) => dayName(d, style)).join("/\u200b"))).join("/\u200b") };
     });
   }
   function whenText(evs, pick) {
